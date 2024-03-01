@@ -1,0 +1,132 @@
+  .app-container {
+    padding-top: 60px; /* Adjust according to header height */
+  }
+
+  .chat-container {
+    width: calc(100% - 40px);
+    margin-left: 20px; /* Align chat container to the left */
+    padding: 80px 20px 150px; /* Adjust top padding to prevent overlap with header */
+    position: relative;
+    text-align: left; /* Align text to the left */
+  }
+
+  .chat-container h1 {
+    position: auto;
+  }
+
+  .message-container {
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .message {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .received-message {
+    background-color: #ECE5DD;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+    max-width: 70%;
+    align-self: flex-start;
+    z-index: 1; 
+  }
+  
+  .sent-message {
+    background-color: #DCF8C6;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+    max-width: 70%;
+    align-self: flex-end;
+    z-index: 1; 
+  }
+  
+  .time {
+    align-self: flex-end;
+    margin-top: 5px;
+  }  
+  
+  .chat-input-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 40px); /* Adjust width */
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    z-index: 2; 
+    border-top: 2px solid #ccc; /* Add border to top */
+  }
+  
+  .chat-input {
+    flex: 1;
+    padding: 10px;
+    border: none; /* Remove border */
+    border-radius: 20px;
+    font-size: 16px;
+  }
+  
+  .send-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+  
+  .chat-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #ccc; /* Add border */
+    border-radius: 20px;
+    padding: 10px;
+  }
+  
+  .chat-box textarea {
+    flex: 1;
+    border: none;
+    resize: none;
+    font-size: 16px;
+  }
+  
+  .chat-box button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .last-message {
+    margin-bottom: 100px; /* Add margin to prevent overlap with input */    
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+  
+  .app-container {
+    padding-top: 60px; /* Adjust according to header height */
+  }
+  
