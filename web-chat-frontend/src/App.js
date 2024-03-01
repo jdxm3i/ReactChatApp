@@ -47,47 +47,11 @@ const App = () => {
     }
   };
 
-  const toggleRecording = () => {
-    if (!recording) {
-      startRecording();
-    } else {
-      stopRecording();
-    }
-  };
 
-  const startRecording = () => {
-    navigator.mediaDevices.getUserMedia({ audio: true })
-      .then(stream => {
-        const mediaRecorder = new MediaRecorder(stream);
-        mediaRecorder.ondataavailable = handleDataAvailable;
-        mediaRecorder.start();
-        setRecording(true);
-        mediaRecorderRef.current = mediaRecorder;
-      })
-      .catch(error => {
-        console.error('Error accessing microphone:', error);
-      });
-  };
 
   const stopRecording = () => {
     mediaRecorderRef.current.stop();
     setRecording(false);
-  };
-
-  const handleDataAvailable = (event) => {
-    const audioBlob = new Blob([event.data], { type: 'audio/wav' });
-    sendAudioMessage(audioBlob);
-  };
-
-  const sendAudioMessage = async (audioBlob) => {
-    try {
-      const formData = new FormData();
-      formData.append('audio', audioBlob);
-      await axios.post(`${backendUrl}/api/messages/audio`, formData);
-      fetchMessages(); // Refresh messages after sending
-    } catch (error) {
-      console.error('Error sending audio message:', error);
-    }
   };
 
   return (
